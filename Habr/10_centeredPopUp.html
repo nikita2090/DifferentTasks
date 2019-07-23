@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10_centeredPopUp</title>
+    <style>
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: rgba(0, 0, 0, .5);
+        }
+
+        .popUp {
+            background: white;
+            width: 500px;
+            height: 300px;
+            overflow-y: scroll;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .withoutOverflow {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!--Требуется сверстать попап по центру, его размеры нам известны,
+    но мы не хотим что бы он прокручивался вместе со страницей,
+    причем по высоте может и не влезать в высоту экрана.-->
+    <main>
+        <button class="btnShowPopUp">Show</button>
+
+        <div class="overlay hidden">
+            <div class="popUp">
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+                Some text<br>
+            </div>
+        </div>
+
+        <div>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+            some content<br>
+        </div>
+    </main>
+
+    <script>
+        const showBtn = document.querySelector('.btnShowPopUp');
+        const popUp = document.querySelector('.overlay');
+
+        showBtn.addEventListener('click', () => {
+            popUp.classList.remove('hidden');
+            document.body.classList.add('withoutOverflow');
+        });
+
+        popUp.addEventListener('click', () => {
+            popUp.classList.add('hidden');
+            document.body.classList.remove('withoutOverflow');
+        })
+    </script>
+
+</body>
+</html>
