@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7_3blocks</title>
+    <style>
+        /*solution #1*/
+        /*.wrap {
+             width: 60px;
+             background: grey;
+
+             display: flex;
+         }
+
+        .block {
+            width: 20px;
+            height: 20px;
+            border: 2px solid black;
+            background: deepskyblue;
+
+            box-sizing: border-box;
+        }*/
+
+        /*solution #2*/
+        .wrap {
+            width: 60px;
+            background: grey;
+        }
+
+        .block {
+            width: 20px;
+            height: 20px;
+            border: 2px solid black;
+            background: deepskyblue;
+
+            box-sizing: border-box;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<!--Вместить три блока 20X20px в ряд, в блок шириной 60px, при этом у блоков должны быть границы.-->
+
+<div class="wrap">
+    <div class="block">1</div>
+    <div class="block">2</div>
+    <div class="block">3</div>
+</div>
+
+</body>
+</html>
