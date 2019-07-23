@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2_PlusMimus</title>
+</head>
+<body>
+    <!--2. Реализовать методы, которые в процессе выполнения строки
+    (2).plus(3).minus(1) дали бы на выходе 4.-->
+
+    <script>
+        Number.prototype.plus = function (num) {
+            return this + num;
+        };
+
+        Number.prototype.minus = function (num) {
+            return this - num;
+        };
+
+        let res = (2).plus(3).minus(1);
+        console.log(res);
+    </script>
+</body>
+</html>
