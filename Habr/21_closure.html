@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>21_closure</title>
+</head>
+<body>
+<!--Что будет выведено в консоль, как можно модифицировать пример что бы он
+ возвращал правильный результат(назовите как можно больше способов)?
+
+ for (var i = 0; i < 10; i++) {
+        setTimeout(function () {
+            console.log(i);
+        }, 100);
+    }
+ -->
+<script>
+    /*#1*/
+    for (let i = 0; i < 10; i++) {
+        setTimeout(function () {
+            console.log(i);
+        }, 100);
+    }
+
+    /*#2*/
+    /*for (var i = 0; i < 10; i++) {
+        setTimeout(function (i) {
+            console.log(i);
+        }, 100, i);
+    }*/
+
+    /*#3*/
+    /*for (var i = 0; i < 10; i++) {
+        setTimeout(console.log.bind(null, i), 100);
+    }*/
+
+    /*#4*/
+    /*for (var i = 0; i < 10; i++) {
+        ((i) => {
+            setTimeout(function () {
+                console.log(i);
+            }, 100);
+        })(i)
+    }*/
+
+    /*#5*/
+    /*for (var i = 0; i < 10; i++) {
+        setTimeout(function (i) {
+            console.log(i);
+        }.bind(null, i), 100);
+    }*/
+</script>
+</body>
+</html>
