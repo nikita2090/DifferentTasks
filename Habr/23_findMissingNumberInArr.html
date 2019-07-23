@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>23_findMissingNumberInArr</title>
+</head>
+<body>
+<!--Числа от 1 до 100 лежат в массиве, они хаотично перемешанные,
+ от туда изъяли одно число, надо найти, что это за число.
+  алгоритм не должен превышать O(n^2) сложности.-->
+<script>
+    let arr = Array.from(new Array(101).keys());
+    arr.shift();
+
+    let arrWithoutNum = arr.slice();
+    arrWithoutNum.splice(48, 1); //delete 49
+
+    const sum = (prev, next) => prev + next;
+    const sumOfInitialArr = arr.reduce(sum);
+    const sumOfChangedArr = arrWithoutNum.reduce(sum);
+
+    const result = sumOfInitialArr - sumOfChangedArr;
+    console.log(result);
+</script>
+</body>
+</html>
