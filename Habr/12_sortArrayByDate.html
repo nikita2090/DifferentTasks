@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12_sortArrayByDate</title>
+</head>
+<body>
+<!--Есть массив в котором лежат объекты с датами, отсортировать по датам-->
+<script>
+    let arr = [
+        {date: '23.07.2019'},
+        {date: '20.12.1990'},
+        {date: '31.12.2018'},
+        {date: '01.05.2021'},
+    ];
+
+    function sortByDates(arr) {
+        arr.forEach(obj => {
+            const splitedDate = obj.date.split('.');
+            const year = splitedDate[2];
+            const month = splitedDate[1] - 1;
+            const day = splitedDate[0];
+            obj.forSort = new Date(year, month, day).getTime();
+        });
+
+        arr.sort((a, b) => (a.forSort - b.forSort));
+        arr.forEach(obj => delete obj.forSort);
+        return arr;
+    }
+
+    console.log(sortByDates(arr));
+</script>
+</body>
+</html>
