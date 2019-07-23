@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13_anagrams</title>
+</head>
+<body>
+<!--Есть несколько слов, определить состоят ли они из одних и тех же букв('кот', 'ток', 'окт')-->
+<script>
+    function isSameLetters(...rest) {
+        let transformed = rest.map(word => (
+            word.toLowerCase().split('').sort().join()
+        ));
+
+        let set = new Set;
+        transformed.forEach(word => set.add(word));
+        return set.size === 1
+    }
+
+    console.log(isSameLetters('кот', 'тОк', 'окт'));
+    console.log(isSameLetters('КИТ', 'тик', 'кот'));
+
+</script>
+</body>
+</html>
