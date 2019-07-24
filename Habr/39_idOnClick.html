@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>39_idOnClick</title>
+</head>
+<body>
+<!--
+Напишите код, который при клике на любой div
+внутри root будет выводить в консоль его id.
+ -->
+<div id="root" style="background: red;">
+    root
+    <span id="id1" style="background: lightblue;">id1</span>
+    <div id="id2" style="background: green;">
+        id2
+        <div id="id3" style="background: yellow;">id3</div>
+    </div>
+</div>
+
+<script>
+    let root = document.querySelector('#root');
+    root.addEventListener('click', (e) => {
+        let target = e.target.closest('div');
+        if (target) {
+            console.log(target.getAttribute('id'));
+        }
+    });
+</script>
+</body>
+</html>
