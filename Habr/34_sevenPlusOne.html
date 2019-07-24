@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>34_sevenPlusOne</title>
+</head>
+<body>
+<!-- Реализовать методы seven, plus, one, five, minus, two.
+seven(plus(one())) -> 8.
+five(minus(two())) -> 3
+ -->
+<script>
+    const makeNumberFunc = (number) => (arg = 0) => number + arg;
+
+    const one = makeNumberFunc(1);
+    const two = makeNumberFunc(2);
+    const five = makeNumberFunc(5);
+    const seven = makeNumberFunc(7);
+
+    const plus = (arg) => arg;
+    const minus = (arg) => -arg;
+
+    console.log(seven(plus(one())));
+    console.log(five(minus(two())));
+</script>
+</body>
+</html>
