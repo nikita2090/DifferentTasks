@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>40_arrayToObj</title>
+</head>
+<body>
+<!--
+Напишите код, который сделает из массива объект
+// на входе массив
+var arr = [
+ {name: 'width', value: 10},
+ {name: 'height', value: 20}
+]
+
+на выходе объект
+{width: 10, height: 20}
+ -->
+
+<script>
+    let arr = [
+        {name: 'width', value: 10},
+        {name: 'height', value: 20}
+    ];
+
+    let result = {};
+    arr.forEach(obj => result[obj.name] = obj.value);
+    console.log(result);
+</script>
+</body>
+</html>
