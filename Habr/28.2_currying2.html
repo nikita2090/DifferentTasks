@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>28.2_currying2</title>
+</head>
+<body>
+<!-- Реализовать функцию f(1)(2)(3)() -> 6, f(0)(3)(1)(5)() -> 9 -->
+<script>
+    console.log(carrying(1)(2)(3)());
+    console.log(carrying(0)(3)(1)(5)());
+
+    function carrying(num) {
+        return (arg) => {
+            if (arg !== undefined) {
+                return carrying(num + arg);
+            } else {
+                return num;
+            }
+        }
+    }
+</script>
+</body>
+</html>
