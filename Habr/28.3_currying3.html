@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>28.3_currying3</title>
+</head>
+<body>
+<!-- Реализовать функцию, которая возвращает результаты
+foo(1)(2)(3) -> 6
+foo(1)(2)(3)(4) -> 10
+foo(-1)(2)(3)(4)(7) -> 15
+foo(1)(2)(3)...(n) вернет результатом сумму 1+2+3...+n
+ -->
+<script>
+    console.log(foo(1)(2)(3));
+    console.log(foo(1)(2)(3)(4));
+    console.log(foo(-1)(2)(3)(4)(7));
+
+    function foo(num) {
+        let sum = num;
+
+        function add(arg) {
+            sum += arg;
+            return add;
+        }
+
+        add.toString = () => sum;
+
+        return add;
+    }
+
+
+</script>
+</body>
+</html>
