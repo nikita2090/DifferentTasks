@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>36_reversedPolishNotation</title>
+</head>
+<body>
+<!--
+Обратная польская нотация.
+
+Основной принцип. Дана строчка 23+1-,
+начинаем двигаться по ней, как только доходим
+до первого арифметического знака, берем две
+цифры перед ним и на их место, записываем результат
+вычисления. Получится 51-. Начинаем все с начала.
+ -->
+<script>
+    const revPolNot = (str) => {
+        let queue = [];
+        for (let symb of str) {
+            if (/\d/.test(symb)) {
+                queue.push(+symb);
+            } else {
+                let result;
+                let num1 = queue.pop();
+                let num2 = queue.pop();
+                switch (symb) {
+                    case '+':
+                        result = num1 + num2;
+                        break;
+                    case '-':
+                        result = num1 > num2 ? num1 - num2 : num2 - num1;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                    case '/':
+                        if (num2 === 0 || num1 === 0) result = 0;
+                        result = num1 / num2;
+                        break;
+                    default:
+                        return null;
+                }
+                queue.push(result);
+            }
+        }
+        return queue[0];
+    };
+
+    console.log(revPolNot('23+1-'));
+    console.log(revPolNot('723*-'));
+    console.log(revPolNot('12+4*3+'));
+</script>
+</body>
+</html>
