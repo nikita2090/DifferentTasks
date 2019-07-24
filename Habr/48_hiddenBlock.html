@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>48_hiddenBlock</title>
+</head>
+<body>
+    <!--
+    Есть два блока, второй скрытый,если в первом
+    нет дочерних элементов, то показать второй.
+     -->
+
+    <div class="first">
+        I'M FIRST
+        <!--<span>BLOCK!</span>-->
+    </div>
+
+    <div class="second" hidden>
+        I'M SECOND
+    </div>
+
+    <script>
+        let firstBlock = document.querySelector('.first');
+        let secondBlock = document.querySelector('.second');
+
+        if(!firstBlock.firstElementChild) {
+            secondBlock.hidden = false;
+        }
+    </script>
+</body>
+</html>
