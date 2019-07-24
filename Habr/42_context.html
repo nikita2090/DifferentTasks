@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>42_context</title>
+</head>
+<body>
+<!--
+Есть функция и объект. Напишите все известные вам способы,
+чтобы вывести в консоли значение x из объекта используя функцию
+ -->
+
+<script>
+    function f() { console.log(this.x); }
+    let obj = {x: 'bar'};
+
+    /*#1*/
+    f.call(obj);
+
+    /*#2*/
+    f.apply(obj);
+
+    /*#3*/
+    f.bind(obj)();
+
+    /*#4*/
+    obj.f = f;
+    obj.f();
+
+</script>
+</body>
+</html>
