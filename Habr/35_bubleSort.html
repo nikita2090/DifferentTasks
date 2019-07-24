@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>35_bubbleSort</title>
+</head>
+<body>
+<!--
+Реализовать сортировку пузырьком
+ -->
+<script>
+    let array = [5, 1, 4, 2, 6, 3];
+    console.log(bubbleSort2(array));
+
+    function bubbleSort2(arr) {
+        for (let j = 0; j < arr.length - 1; j++) {
+            arr.forEach((elem, i) => {
+                if (elem > arr[i + 1]) {
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = elem;
+                }
+            })
+        }
+        return arr;
+    }
+</script>
+</body>
+</html>
