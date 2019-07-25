@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>38.1_parentheses1</title>
+</head>
+<body>
+<!--
+Есть строка, состоящая из разных скобок,
+проверить закрыты ли все .
+Пример строки: "())({}}{()][]["
+ -->
+
+<script>
+    const isClosed = (str) => {
+        let opened = [];
+        for (let char of str) {
+            if (/[({\[]/.test(char)) {
+                opened.push(char);
+            } else if(/[)}\]]/.test(char)){
+                let index = opened.indexOf(char);
+                opened.splice(index, 1);
+            }
+        }
+        return !opened.length;
+    };
+
+    console.log(isClosed('())({}}{()]]['));
+    console.log(isClosed('({([])})'));
+</script>
+</body>
+</html>
