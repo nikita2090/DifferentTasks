@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>findVowelsAmount</title>
+</head>
+<body>
+<!--
+Нужно написать функцию, принимающую строку в качестве
+аргумента и возвращающую количество гласных, которые
+содержатся в строке. Гласными являются
+ «a», «e», «i», «o», «u».-->
+
+<script>
+    function findVowelsAmount(str) {
+        let sum = 0;
+        for (let char of str.toLowerCase()) {
+            if (/[aeiou]/.test(char)) {
+                sum++;
+            }
+        }
+        return sum;
+    }
+
+    console.log(findVowelsAmount('apple'));
+    console.log(findVowelsAmount('Honorificabilitudinitatibus'));
+</script>
+</body>
+</html>
