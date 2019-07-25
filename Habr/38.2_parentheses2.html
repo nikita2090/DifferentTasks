@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>38.2_parentheses2</title>
+</head>
+<body>
+<!--
+Есть строка, состоящая из разных скобок,
+проверить закрыты ли все ПРАВИЛЬНО.
+Пример строки: "())({}}{()][]["
+ -->
+
+<script>
+    const isClosedCorrectly = (str) => {
+        if (str.length % 2) return false;
+
+        let halfStr = str.slice(0, (str.length) / 2);
+        let reversedHalfStr = halfStr.split('').reverse().join('');
+
+        let mirrorStr = [];
+        for (let char of reversedHalfStr) {
+            switch(char){
+                case '(':
+                    mirrorStr.push(')');
+                    break;
+                case '{':
+                    mirrorStr.push('}');
+                    break;
+                case '[':
+                    mirrorStr.push(']');
+                    break;
+                default:
+                    return null;
+            }
+        }
+        let correctStr = halfStr + mirrorStr.join('');
+        return correctStr === str;
+    };
+
+    console.log(isClosedCorrectly('())({}}{()]]['));
+    console.log(isClosedCorrectly('({[(])})'));
+    console.log(isClosedCorrectly('({[]})'));
+</script>
+</body>
+</html>
