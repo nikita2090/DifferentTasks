@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5_treeSum</title>
+</head>
+<body>
+<!--
+Дано дерево, надо найти сумму всех вершин
+ -->
+
+<script>
+    let tree = {
+        value: 1,
+        next: [
+            {
+                value: 2,
+                next: null
+            },
+            {
+                value: 3,
+                next: [
+                    {
+                        value: 4,
+                        next: null
+                    }
+                ]
+            }
+        ]
+    };
+
+    /*recursion*/
+    let sum = 0;
+    function getSumTree(tree) {
+        sum += tree.value;
+        if (tree.next) {
+            for (let obj of tree.next) {
+                getSumTree(obj);
+            }
+        }
+        return sum;
+    }
+    console.log( getSumTree(tree) );
+
+    /*loop*/
+    function getSumTree2(tree) {
+        let arr = [tree];
+        let sum = 0;
+        let current;
+
+        while (arr.length) {
+            current = arr.shift();
+            sum += current.value;
+
+            if (current.next) {
+                for (let obj of current.next) {
+                    arr.push(obj);
+                }
+            }
+        }
+        return sum;
+    }
+
+    console.log( getSumTree2(tree) );
+</script>
+</body>
+</html>
