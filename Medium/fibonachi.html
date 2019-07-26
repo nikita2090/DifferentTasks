@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fibonacci</title>
+</head>
+<body>
+<!--
+Фибоначчи — это ряд чисел, где каждое последующее
+является суммой двух предыдущих. Так, первые десять
+чисел выглядят следующим образом:
+1, 1, 2, 3, 5, 8, 13, 21, 34.
+
+Нужно написать функцию, которая возвращает n-ную запись
+в определенной последовательности, причем n — число,
+которое передается в качестве аргумента функции.
+-->
+
+<script>
+    /*recursion*/
+    function fibonacci(n) {
+        if (n < 2) {
+            return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2)
+    }
+
+    console.log(fibonacci(8));
+
+    /*loop*/
+    function fibonacci2(n) {
+        let arr = [];
+        for (let i = 0; i <= n; i++) {
+            if (i < 2) {
+                arr.push(i);
+            } else {
+                arr.push(arr[i - 1] + arr[i - 2])
+            }
+        }
+        return arr[n];
+    }
+
+    console.log(fibonacci2(8));
+
+</script>
+</body>
+</html>
