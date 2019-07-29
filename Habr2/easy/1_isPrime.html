@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1_isPrime</title>
+</head>
+<body>
+<!--
+Реализуйте функцию isPrime(), которая возвращает true или false,
+указывая, является ли переданное ей число простым.
+-->
+
+<script>
+    function isPrime(num) {
+        if (num < 2) return false;
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    console.log( isPrime(0) );
+    console.log( isPrime(7) );
+    console.log( isPrime(1) );
+    console.log( isPrime(109) );
+</script>
+</body>
+</html>
