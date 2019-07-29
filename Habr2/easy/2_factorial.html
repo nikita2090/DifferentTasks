@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2_factorial</title>
+</head>
+<body>
+<!--
+Реализуйте функцию factorial(),которая
+возвращает факториал переданного ей числа.
+-->
+
+<script>
+    /*recursion*/
+    function factorial(num) {
+        if (num < 2) {
+            return 1;
+        } else {
+            return num * factorial(num - 1);
+        }
+
+    }
+
+    console.log(factorial(0));
+    console.log(factorial(1));
+    console.log(factorial(7));
+    console.log(factorial(100));
+
+
+    /*loop*/
+    function factorial2(num) {
+        if (num < 2) return 1;
+        let sum = 1;
+        for (let i = 2; i <= num; i++) {
+            sum *= i;
+        }
+        return sum;
+    }
+
+    console.log(factorial2(0));
+    console.log(factorial2(1));
+    console.log(factorial2(7));
+    console.log(factorial2(100));
+</script>
+</body>
+</html>
