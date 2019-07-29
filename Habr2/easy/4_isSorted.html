@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4_isSorted</title>
+</head>
+<body>
+<!--
+Реализуйте функцию isSorted(),которая возвращает true или false
+в зависимости о того, отсортирован ли переданный ей числовой массив.
+-->
+
+<script>
+    function isSorted(arr) {
+        let sorted = [...arr].sort((a, b) => a - b);
+        for (let i = 0; i < sorted.length; i++) {
+            if (sorted[i] !== arr[i]) return false;
+        }
+        return true;
+    }
+
+
+    console.log(isSorted([]));
+    console.log(isSorted([-Infinity, -5, 0, 3, 9]));
+    console.log(isSorted([3, 9, -3, 10]));
+</script>
+</body>
+</html>
