@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7_reverse</title>
+</head>
+<body>
+<!--
+Реализуйте функцию reverse(), которая обращает порядок следования
+символов переданной ей строки. Не пользуйтесь встроенной функцией reverse().
+-->
+
+<script>
+    function reverse(str) {
+        let result = [];
+        for (let i = str.length - 1; i >= 0; i--) {
+            result.push(str[i]);
+        }
+        return result.join('');
+    }
+
+    console.log( reverse('') );
+    console.log(reverse('abcdef') );
+</script>
+</body>
+</html>
