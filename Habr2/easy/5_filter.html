@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5_filter</title>
+</head>
+<body>
+<!--
+Создайте собственную реализацию функции filter().
+-->
+
+<script>
+    function filter(arr, func) {
+        let result = [];
+        for (let elem of arr) {
+            if (func(elem)) {
+                result.push(elem);
+            }
+        }
+        return result;
+    }
+
+    const result = filter([1, 2, 3, 4], n => n < 3);
+    console.log(result);
+</script>
+</body>
+</html>
