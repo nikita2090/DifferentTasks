@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6_reduce</title>
+</head>
+<body>
+<!--
+Создайте собственную реализацию функции reduce().
+-->
+
+<script>
+    function reduce(arr, func, initialValue) {
+        let result = initialValue;
+        for (let elem of arr) {
+            result = func(result, elem);
+        }
+        return result;
+    }
+
+    console.log( reduce([1, 2, 3, 4], (a, b) => a + b, 0) );
+    console.log( reduce([1, 2, 3, 4], (a, b) => a * b, 2) );
+</script>
+</body>
+</html>
